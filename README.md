@@ -1,7 +1,31 @@
 Userbase Role Provider Bundle
 
+Use this bundle to add Roles to Users loaded by the UserProvider.
+
+Userbase does not provide Role information about its users so apps need to
+supply their own.  This bundle allows you to define fixed roles for your users
+and these will be incorporated into the User objects loaded by the Userbase
+UserProvider.
+
+Define the fixed roles in a Yaml file at `config/roles.yaml`:-
+
+```yaml
+my-username: [ROLE_ADMIN]
+some-other-username: [ROLE_USER]
+```
+
+That's it!  You can now restrict access to resources based on these roles.
+
+
 Installation
 ============
+
+Note: this feature requires version 1.6 or later of the userbase/client
+package.  You may need to begin installation by issuing:-
+
+```console
+$ composer require "linkorb/userbase-client ^1.6"
+```
 
 Applications that use Symfony Flex
 ----------------------------------
