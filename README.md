@@ -20,11 +20,11 @@ That's it!  You can now restrict access to resources based on these roles.
 Installation
 ============
 
-Note: this feature requires version 1.6 or later of the userbase/client
+Note: this feature requires version 1.7 or later of the userbase/client
 package.  You may need to begin installation by issuing:-
 
 ```console
-$ composer require "linkorb/userbase-client ^1.6"
+$ composer require "linkorb/userbase-client ^1.7"
 ```
 
 Applications that use Symfony Flex
