@@ -4,7 +4,7 @@
     "type": "symfony-bundle",
     "license": "MIT",
     "require": {
-        "linkorb/userbase-role-contracts": "^1.0",
+        "linkorb/userbase-role-contracts": "^2.0",
         "symfony/config": "^4",
         "symfony/dependency-injection": "^4",
         "symfony/http-kernel": "^4",
@@ -18,7 +18,7 @@
         "friendsofphp/php-cs-fixer": "^2",
         "phpro/grumphp": "^0.15.2",
         "phpstan/phpstan": "^0.11.8",
-        "symfony/phpunit-bridge": "^4.3"
+        "symfony/phpunit-bridge": "^5.0"
     },
     "autoload": {
         "psr-4": { "LinkORB\\Userbase\\RoleProviderBundle\\": "" },
