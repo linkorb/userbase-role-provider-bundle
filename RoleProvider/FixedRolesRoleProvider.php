@@ -2,8 +2,8 @@
 
 namespace LinkORB\Userbase\RoleProviderBundle\RoleProvider;
 
-use LinkORB\Contracts\UserbaseRole\RoleProviderInterface;
 use LinkORB\Contracts\UserbaseRole\RoleInterface;
+use LinkORB\Contracts\UserbaseRole\RoleProviderInterface;
 
 class FixedRolesRoleProvider implements RoleProviderInterface
 {

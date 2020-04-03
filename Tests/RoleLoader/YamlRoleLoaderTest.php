@@ -2,11 +2,11 @@
 
 use LinkORB\Userbase\RoleProviderBundle\RoleLoader\YamlRoleLoader;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\Config\Exception\FileLocatorFileNotFoundException;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\Yaml\Parser;
-use Symfony\Component\Config\Exception\FileLocatorFileNotFoundException;
 use Symfony\Component\Yaml\Exception\ParseException;
+use Symfony\Component\Yaml\Parser;
 
 class YamlRoleLoaderTest extends TestCase
 {
@@ -15,7 +15,7 @@ class YamlRoleLoaderTest extends TestCase
     private $roleLoader;
     private $yamlParser;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->container = $this->createMock(ContainerBuilder::class);
         $this->locator = $this->createMock(FileLocator::class);
