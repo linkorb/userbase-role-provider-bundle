@@ -25,6 +25,7 @@ class Configuration implements ConfigurationInterface
                     ->addDefaultsIfNotSet()
                     ->children()
                         ->arrayNode('from_files')
+                            ->canBeDisabled()
                             ->addDefaultsIfNotSet()
                             ->children()
                                 ->scalarNode('path')

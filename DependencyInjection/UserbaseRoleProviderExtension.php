@@ -35,7 +35,7 @@ class UserbaseRoleProviderExtension extends Extension implements CompilerPassInt
             $configs
         );
 
-        if (isset($config['fixed_roles'])) {
+        if (true === $config['fixed_roles']['from_files']['enabled']) {
             // the loader will make the roles available in the userbase.roles param
             $this->loadFixedRoles($container, $config);
         }

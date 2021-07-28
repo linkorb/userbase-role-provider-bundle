@@ -18,6 +18,29 @@ Next, clear the app cache so that the roles are baked into the service
 container configuration.  And that's it!  You can now restrict access to
 resources based on these roles.
 
+The bundle will load roles from the roles.yaml file without any further
+configuration.  It can instead be made to load roles from the environment.
+Populating a service parameter named `userbase.roles` is the key to this
+alternative configuration:
+
+```
+# add to a .env file
+USERBASE_ROLES='{"adele":["ROLE_ADMIN"]}'
+
+# add to config/services.yaml
+parameters:
+  userbase.roles: '%env(json:USERBASE_ROLES)%'
+
+# add to config/packages/userbase.yaml
+userbase_role_provider:
+  fixed_roles:
+    from_files: false
+```
+
+The change to userbase.yaml will require that the app cache is cleared.  Then
+the roles will be loaded from the `USERBASE_ROLES` environment variable at the
+start of every request.
+
 
 Installation
 ============
