@@ -54,9 +54,7 @@ class UserbaseRoleProviderExtension extends Extension implements CompilerPassInt
 
         $roleProviders = $container->findTaggedServiceIds(self::TAG_ROLE_PROVIDER);
         if (empty($roleProviders)) {
-            throw new \RuntimeException(
-                'Cannot supply a RoleProvider to Userbase UserProvider because there are no services tagged with "userbase_role_provider.role_provider".'
-            );
+            throw new \RuntimeException('Cannot supply a RoleProvider to Userbase UserProvider because there are no services tagged with "userbase_role_provider.role_provider".');
         }
 
         $userProviderDefn->addMethodCall(
@@ -83,9 +81,7 @@ class UserbaseRoleProviderExtension extends Extension implements CompilerPassInt
                 $config['fixed_roles']['from_files']['file_name']
             );
         } else {
-            throw new \UnexpectedValueException(
-                "Invalid config value: userbase_role_provider.fixed_roles.from_files.type = \"{$config['fixed_roles']['from_files']['type']}\". The role provider can load fixed roles only from yaml files."
-            );
+            throw new \UnexpectedValueException("Invalid config value: userbase_role_provider.fixed_roles.from_files.type = \"{$config['fixed_roles']['from_files']['type']}\". The role provider can load fixed roles only from yaml files.");
         }
     }
 
