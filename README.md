@@ -14,7 +14,9 @@ my-username: [ROLE_ADMIN]
 some-other-username: [ROLE_USER]
 ```
 
-That's it!  You can now restrict access to resources based on these roles.
+Next, clear the app cache so that the roles are baked into the service
+container configuration.  And that's it!  You can now restrict access to
+resources based on these roles.
 
 
 Installation

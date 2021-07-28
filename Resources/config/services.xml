@@ -8,7 +8,8 @@
         <service id="userbase_role_provider.fixed_roles_role_provider"
             class="LinkORB\Userbase\RoleProviderBundle\RoleProvider\FixedRolesRoleProvider"
             public="false">
-            <argument key="$roleMap" />
+            <tag name="userbase_role_provider.role_provider"/>
+            <argument key="$roleMap">%userbase.roles%</argument>
         </service>
     </services>
 </container>

@@ -38,9 +38,6 @@ class UserbaseRoleProviderExtension extends Extension implements CompilerPassInt
         if (isset($config['fixed_roles'])) {
             // the loader will make the roles available in the userbase.roles param
             $this->loadFixedRoles($container, $config);
-            $roleProviderDefn = $container->getDefinition('userbase_role_provider.fixed_roles_role_provider');
-            $roleProviderDefn->addTag(self::TAG_ROLE_PROVIDER);
-            $roleProviderDefn->replaceArgument('$roleMap', $container->getParameter('userbase.roles'));
         }
     }
 
