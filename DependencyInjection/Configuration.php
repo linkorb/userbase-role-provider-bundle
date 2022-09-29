@@ -14,7 +14,7 @@ class Configuration implements ConfigurationInterface
         $this->projectDir = $projectDir;
     }
 
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('userbase_role_provider');
         $rootNode = $treeBuilder->getRootNode();
