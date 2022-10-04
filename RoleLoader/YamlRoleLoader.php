@@ -22,6 +22,9 @@ class YamlRoleLoader extends FileLoader
         parent::__construct($locator);
     }
 
+    /**
+     * @return mixed
+     */
     public function load($resource, $type = null)
     {
         try {
@@ -39,7 +42,7 @@ class YamlRoleLoader extends FileLoader
         $this->container->setParameter('userbase.roles', $roles);
     }
 
-    public function supports($resource, $type = null)
+    public function supports($resource, $type = null): bool
     {
         if (!\is_string($resource)) {
             return false;

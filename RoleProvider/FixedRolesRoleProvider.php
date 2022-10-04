@@ -16,10 +16,10 @@ class FixedRolesRoleProvider implements RoleProviderInterface
 
     public function getRoles(RoleInterface $user): array
     {
-        if (!\array_key_exists($user->getUsername(), $this->roleMap)) {
+        if (!\array_key_exists($user->getUserIdentifier(), $this->roleMap)) {
             return [];
         }
 
-        return $this->roleMap[$user->getUsername()];
+        return $this->roleMap[$user->getUserIdentifier()];
     }
 }
