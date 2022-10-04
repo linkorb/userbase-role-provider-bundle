@@ -27,13 +27,13 @@ class YamlRoleLoader extends FileLoader
         try {
             $path = $this->locator->locate($resource, null, true);
         } catch (FileLocatorFileNotFoundException $e) {
-            throw new \Exception("Unable to locate any role files named \"{$resource}\".", null, $e);
+            throw new \Exception("Unable to locate any role files named \"{$resource}\".", 0, $e);
         }
 
         try {
             $roles = $this->yamlParser->parseFile($path);
         } catch (ParseException $e) {
-            throw new \Exception("Unable to load roles from Yaml file \"{$path}\".", null, $e);
+            throw new \Exception("Unable to load roles from Yaml file \"{$path}\".", 0, $e);
         }
 
         $this->container->setParameter('userbase.roles', $roles);

@@ -92,7 +92,7 @@ class UserbaseRoleProviderExtension extends Extension implements CompilerPassInt
         try {
             $loader->load($rolesFilename);
         } catch (\Exception $e) {
-            throw new \RuntimeException("Failed to load roles from the directory \"{$rolesDirectory}\"", null, $e);
+            throw new \RuntimeException("Failed to load roles from the directory \"{$rolesDirectory}\"", 0, $e);
         }
     }
 }
